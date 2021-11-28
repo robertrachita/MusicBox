@@ -51,6 +51,9 @@ app.post('/auth', function(request, response) {
 	}
 });
 
+
+//To start type cd nodelogin and then node login.js
+
 //If the login was good we redirect to home
 app.get('/home', function(request, response) {
 	if (request.session.loggedin) {
