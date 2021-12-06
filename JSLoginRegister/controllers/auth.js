@@ -6,7 +6,7 @@ const { promisify } = require('util');
 
 const db = mysql.createConnection({
     //In order to run on the server instead of localhost
-    //use ip adress of it 
+    //use ip adress of it
     host: process.env.DATABASE_HOST,
     user: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,
@@ -22,16 +22,16 @@ exports.login = async(req,res) =>{
                 message: 'Please provide an email and password'
             })
         }
-            
+
         db.query('SELECT * FROM users WHERE email = ?', [email] , async(error,results) => {
-            
+
             console.log(results);
             if(!results || !(await bcrypt.compare(password, results[0].password))  ){
                 res.status(401).render('login',{
                     message: 'Email or Password is incorrect'
                 })
             } else {
-                //The upper is checking if login credentials are wrong if they are true we start with the cookies 
+                //The upper is checking if login credentials are wrong if they are true we start with the cookies
                 const id = results[0].user_id;
                 const token = jwt.sign({ id: id }, process.env.JWT_SECRET,{
                     expiresIn: process.env.JWT_EXPIRES_IN
@@ -65,12 +65,12 @@ exports.login = async(req,res) =>{
 exports.register = (req, res) =>{
     console.log(req.body);
 
-    //Getting from register.hbs form 
+    //Getting from register.hbs form
     // const name = req.body.name;
     // const email = req.body.email;
     // const password = req.body.password;
     // const passwordConfirm = req.body.passwordConfirm;
-//The bottom one is the smarter way to do it 
+//The bottom one is the smarter way to do it
     const {name, email, password, passwordConfirm} = req.body;
 
     db.query('SELECT email FROM users WHERE email = ?', [email], async(error, results) =>{
@@ -120,7 +120,7 @@ exports.isLoggedIn = async (req,res,next ) => {
 
             //2) Check if the user still exists
             db.query('SELECT * FROM users WHERE user_id = ?', [decoded.id], (error,result) =>{
-              console.log(result);  
+              console.log(result);
 
               if(!result){
                   return next();
@@ -136,7 +136,7 @@ exports.isLoggedIn = async (req,res,next ) => {
     }
     else {
         next();
-    }   
+    }
 }
 
 exports.logout = async (req,res) => {
