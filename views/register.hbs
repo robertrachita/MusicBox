@@ -8,7 +8,9 @@
     <title>MusicDATE</title>
     <link rel="icon" href="img/favicon.ico">
     <link href="/style.css" rel="stylesheet">
-
+    <script type='text/javascript' src='http://d3js.org/d3.v3.min.js'></script>
+    <script type='text/javascript' src='http://d3js.org/topojson.v1.min.js'></script>
+    <script type='text/javascript' src='/planetaryjs.min.js'></script>
 </head>
 
 <body>
@@ -86,7 +88,10 @@
                     </div>
                 </div>
             </div>
-            <div id="globeWrapper"></div>
+            <div id="globeWrapper">
+                <canvas id='rotatingGlobe' width='400' height='400' style='width: 400px; height: 400px; cursor: move;'></canvas>
+                <script src='/globe.js'></script>
+            </div>
         </div>
     </div>
 </body>
