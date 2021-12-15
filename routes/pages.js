@@ -18,8 +18,13 @@ router.get('/login',(req,res)=> {
     res.render('login');
 });
 
+<<<<<<< Updated upstream
 router.get('/login2',(req,res)=> {
     res.render('login2');
+=======
+router.get('/index', (req, res) => {
+    res.render('index');
+>>>>>>> Stashed changes
 });
 
 router.get('/profile', authController.isLoggedIn, (req,res)=> {

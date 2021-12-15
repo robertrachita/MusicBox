@@ -42,7 +42,11 @@ header{
     padding: 10px;
 }
 
+<<<<<<< Updated upstream
 svg{
+=======
+#svg {
+>>>>>>> Stashed changes
     height: 100%;
     width: 100%;
 }
