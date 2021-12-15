@@ -5,13 +5,8 @@ const router = express.Router();
 
 router.post('/register', authController.register);
 
-router.post('/login', authController.login );
+router.post('/login', authController.login);
 
-<<<<<<< Updated upstream
-router.get('/logout',authController.logout);
-    
-=======
 router.post('/index', authController.login);
 
->>>>>>> Stashed changes
 module.exports = router;
