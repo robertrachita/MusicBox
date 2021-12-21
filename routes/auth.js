@@ -35,6 +35,5 @@ router.post('/index', authController.login);
 router.get('/logout', authController.logout);
 
 router.post('/upload', upload.single('file'), uploadController.upload);
- developing
 
 module.exports = router;
