@@ -31,33 +31,32 @@ router.get('/index', (req, res) => {
 router.get('/profile', authController.isLoggedIn, (req, res) => {
 
 
-router.get('/login2', (req, res) => {
-    res.render('login2');
+    router.get('/login2', (req, res) => {
+        res.render('login2');
+    });
+
+    router.get('/profile', authController.isLoggedIn, (req, res) => {
+        developing
+        if (req.user) {
+            res.render('profile', {
+                user: req.user
+            });
+        } else {
+            res.redirect('/login');
+        }
+
+    });
+
+    router.get('/upload', authController.isLoggedIn, (req, res) => {
+        if (req.user) {
+            res.render('upload');
+        } else {
+            res.redirect('/login');
+        }
+    });
+
+    module.exports = router;
+
+    router.get('/upload', express.static(path.join(__dirname, 'public/upload')));
+
 });
-
-router.get('/profile', authController.isLoggedIn, (req, res) => {
-developing
-    if (req.user) {
-        res.render('profile', {
-            user: req.user
-        });
-    } else {
-        res.redirect('/login');
-    }
-    
-});
-
-router.get('/upload', authController.isLoggedIn, (req, res) => {
-    if (req.user) {
-        res.render('upload');
-    } else {
-        res.redirect('/login');
-    }
-});
-
-module.exports = router;
-
-router.get('/upload', express.static(path.join(__dirname, 'public/upload')));
-
-module.exports = router;
-
