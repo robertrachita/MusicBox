@@ -1,55 +1,63 @@
-*{
+* {
     box-sizing: border-box;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-html,body{
+html,
+body {
     height: 100%;
     width: 100%;
 }
 
-body{
+body {
     background-image: url("img/bg.svg");
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
+    margin-top: 0px;
+    margin-left: 0px;
 }
 
-#wrapper{
+#wrapper {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
+
 /* HEADER */
 
-#logo{
+#logo {
     height: 100%;
     width: auto;
     margin: 2px;
 }
 
-
-img{
+img {
     height: auto;
 }
 
-header{
+header {
     height: 10%;
     width: 100%;
     display: flex;
     padding: 10px;
 }
 
+
 svg{
+#svg {
+svg {
+developing
     height: 100%;
     width: 100%;
 }
 
+
 /* LOGIN and SIGNUP content */
 
-#content{
+#content {
     height: 70%;
     width: 100%;
     display: flex;
@@ -57,9 +65,9 @@ svg{
     align-items: center;
 }
 
-#boxWrapper{
+#boxWrapper {
     width: 50%;
-    height: 75%;
+    height: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,14 +75,14 @@ svg{
     margin-top: 100px;
 }
 
-#boxTabs{
+#boxTabs {
     height: 17%;
     width: 70%;
     display: flex;
     color: white;
 }
 
-.tab{
+.tab {
     width: 100%;
     height: 100%;
     background-color: white;
@@ -86,51 +94,61 @@ svg{
     font-weight: bold;
 }
 
-#loginTab{
+#loginTab {
     border-radius: 10px 0 0 0;
 }
 
-#signupTab{
+#signupTab {
     border-radius: 0 10px 0 0;
 }
 
-.tabLink{
+.tabLink {
     width: 100%;
     width: 50%;
 }
 
-.tabLink:hover{
+.tabLink:hover {
     background-color: white;
 }
 
-#loginContent, #signupContent{
+#loginContent {
     height: 70%;
     width: 70%;
-    display:flex;
+    display: flex;
     background-color: white;
     border-radius: 0 0 10px 10px;
     opacity: 90%;
 }
 
-.inactiveTab{
+#signupContent {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+    opacity: 90%;
+}
+
+.inactiveTab {
     width: 100%;
     cursor: pointer;
     background-color: lightgray;
 }
 
-.illustration{
+.illustration {
     width: 35%;
     height: 100%;
     background-image: url("img/man.png");
     background-repeat: no-repeat;
 }
 
+
 /* #idWrapper{
     height: 100%;
     width: 65%;
 } */
 
-.formWrapper{
+.formWrapper {
     width: 65%;
     height: 100%;
     display: flex;
@@ -139,78 +157,73 @@ svg{
     justify-content: center;
 }
 
-.inactive{
+.inactive {
     display: none !important;
 }
 
+
 /* Forms */
 
-form{
+form {
     width: 100%;
     height: 90%;
     display: flex;
     flex-direction: column;
 }
 
-label{
+label {
     font-size: 10pt;
     height: 20px;
     margin: 20px 0 0 10px;
 }
 
-.switchText{
+.switchText {
     cursor: pointer;
     color: #693580;
 }
 
-.switchText:hover{
+.switchText:hover {
     color: #F19002;
     font-size: 10.5pt;
 }
 
-input,button{
+input,
+button {
     width: 90%;
     border-radius: 40px;
     padding: 5px;
 }
 
-input[type="email"],[type="text"]{
-    background-color:#472854;
+input[type="email"],
+[type="text"] {
+    background-color: #472854;
     color: white;
     font-size: 10pt;
 }
 
-input[type="password"]{
-    background-color:#472854;
+input[type="password"] {
+    background-color: #472854;
     color: white;
     font-size: 10pt;
 }
 
-button{
+button {
     background-color: white;
     border-color: #472854;
-    color:#34203D;
+    color: #34203D;
     cursor: pointer;
     margin-top: 20px;
 }
 
-button:hover{
-    background-color:#472854;
+button:hover {
+    background-color: #472854;
     color: white;
 }
 
+
 /* Login form */
 
-
-#loginText{
-    height: 10%;
-    width: 100%;
-    font-size: 10pt;
-    text-align: center;
-    margin-bottom: 20px;
-} 
-
-#signupText{
+#loginText {
     height: 10%;
     width: 100%;
     font-size: 10pt;
@@ -218,12 +231,105 @@ button:hover{
     margin-bottom: 20px;
 }
 
-
+#signupText {
+    height: 10%;
+    width: 100%;
+    font-size: 10pt;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
 
 /* Globe */
 
-#globeWrapper{
+#globeWrapper {
     width: 50%;
     height: 100%;
+    padding-top: 125px;
+    padding-left: 70px;
+}
+
+@media only screen and (max-width: 900px) {
+    /* removes the globe and centers the content*/
+    #globeWrapper {
+        display: none;
+    }
+    #boxWrapper {
+        width: 75%;
+    }
+    .formWrapper {
+        width: 100%;
+    }
+    #loginText {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    #loginContent {
+        width: 100%;
+    }
+    #signupContent {
+        height: 100%;
+    }
+    #boxTabs {
+        width: 100%;
+    }
+    #signupContent {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    /* removes the illustration*/
+    #boxWrapper {
+        width: 100%;
+    }
+    .illustration {
+        display: none;
+    }
+    #loginEmail {
+        width: 100%;
+    }
+    #loginPassword {
+        width: 100%;
+    }
+    #signupEmail {
+        width: 100%;
+    }
+    #signupPassword {
+        width: 100%;
+    }
+    #signupContent {
+        height: 100%;
+    }
+    input {
+        margin-left: 5%;
+    }
+    label {
+        margin-left: 5%;
+    }
+    button {
+        margin-left: 5%;
+    }
+}
+
+@media only screen and (max-width:420px) {
+    #boxWrapper {
+        width: 100%;
+    }
+    #content {
+        width: 95%;
+    }
+    #signupContent {
+        height: 100%;
+    }
+    input {
+        margin-left: 5%;
+    }
+    label {
+        margin-left: 5%;
+    }
+    button {
+        margin-left: 5%;
+    }
 }
