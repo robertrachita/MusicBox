@@ -1,5 +1,5 @@
 body{
-    background-image:  url("/img/background.svg")!important;
+    background-image:  url("img/background.svg")!important;
 }
 
 /* Alterations to original elements */
