@@ -6,7 +6,7 @@ const router = express.Router();
 const app = express();
 
 router.get('/', authController.isLoggedIn, (req, res) => {
-    res.render('index', {
+    res.render('login', {
         user: req.user
     });
 });
