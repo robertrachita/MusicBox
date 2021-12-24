@@ -6,7 +6,7 @@ const router = express.Router();
 const app = express();
 
 router.get('/', authController.isLoggedIn, (req, res) => {
-    res.render('index', {
+    res.render('login', {
         user: req.user
     });
 });
@@ -43,6 +43,15 @@ router.get('/upload', authController.isLoggedIn, (req, res) => {
         res.redirect('/login');
     }
 });
+
+router.get('/index', authController.isLoggedIn, (req, res) => {
+    if (req.user) {
+        res.render('index');
+    } else {
+        res.redirect('/login');
+    }
+});
+
 
 router.get('/upload', express.static(path.join(__dirname, 'public/upload')));
 

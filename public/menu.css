@@ -1,0 +1,74 @@
+body{
+    background-image:  url("img/background.svg")!important;
+}
+
+/* Alterations to original elements */
+
+#logoIndex{
+    height: 100%;
+    width: auto;
+    margin: 2px;
+}
+
+#contentIndex{
+    height: 70%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#wrapperIndex{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tiles */
+
+.tile{
+    background-color: white;
+    padding: 10px;
+    height: 145px;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.73); 
+    box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.73);
+    transition: 0.5s;
+}
+
+.tileLinks{
+    width: 22%;
+    margin: 15px;
+    text-decoration: none;
+}
+
+.tile:hover{
+    height: 150px;
+    width: 110%;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.tileRow{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.icons{
+    height: 70%;
+    width: auto; 
+}
+
+.tileTitles{
+    color: #472854;
+}
