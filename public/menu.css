@@ -4,7 +4,7 @@ body{
 
 /* Alterations to original elements */
 
-#logoIndex{
+.logoIndex{
     height: 100%;
     width: auto;
     margin: 2px;
