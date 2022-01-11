@@ -24,6 +24,10 @@ router.get('/login2', (req, res) => {
     res.render('login2');
 });
 
+router.get('/registration2', (req, res) => {
+    res.render('registration2');
+});
+
 router.get('/profile', authController.isLoggedIn, (req, res) => {
     if (req.user) {
         res.render('profile', {
