@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./metronomeStyle.css">
+    <script src="./metronomeBackEnd.js" type="module"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Metronome</title>
+    
+</head>
+<body onload="hideMetronome()">
+    <img class ="sheet" src="scrolabbleMUSICSHETT.png" width="900">
+    <img class ="sheet-shett" src="shett2.png" width="900">
+    <button id="metronomeToggle" onclick="metronomeToggler()">metronome</button>
+    
+        <div id="metronome">
+            <div class="bpm-display">
+                <span class="tempo">150</span>
+                <span class="bpm">BPM</span>
+            </div>
+            <div class="tempo-text">Nice and steady</div>
+            <div class="tempo-settings">
+                <div class="adjust-tempo-btn decrease-tempo">-</div>
+                <input type="range" min="20" max="280" step="1" class="slider">
+                <div class="adjust-tempo-btn increase-tempo">+</div>
+            </div>
+            <div class="start-stop">start</div>
+            <div class="measures">
+                <div class="subtract-beats stepper">-</div>
+                <div class="measure-count">4</div>
+                <div class="add-beats stepper">+</div>
+            </div>
+            <span class="beats-per-measure-text">Beats per measure</span>
+        
+        </div>
+        
+    <!-- <canvas id="metronomeAnimation">
+
+    </canvas> -->
+    <button id="metronomeAnimationToggle" onclick="metronomeAnimationToggler()">metronome Animation</button>
+    <div id="metronomeAnimation">
+        <table class="example">
+            <tr>
+                <td><div id="metronome_container"></div></td>
+                <td><div class="status"></div></td>
+            </tr>
+            <tr>
+                <td colspan=2 id="inputs"></td>
+            </tr>
+        </table>
+    </div>
+    <style>
+        .example {
+            font-family: Arial;
+            font-size: 12px;
+        }
+        
+        .status {
+            width: 100px;
+            height: 200px;
+            padding: 10px;
+            overflow-y: auto;
+        }
+        
+        .statusline {
+            font-size: 10px;
+            background-color: #E0E0E0;
+            margin: 3px 0;
+            padding: 2px;
+        }
+        
+        .metr_input {
+           width: 40px;
+           margin-right: 10px;
+           text-align: center;
+        }
+        
+        #count {
+            width: 50px;
+            display: inline-block;
+            text-align: right;
+        }
+                </style>
+            </head>
+            <body>
+              
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+                <script src="metronome.js"></script>
+                <script>
+        /*global $ Raphael soundManager metronome*/
+        
+        function tick(t) {
+            $("<div />").html(t % 2 === 1 ? "Tick" : "Tock").addClass("statusline").appendTo(".status");
+            $("#count").html(t);    
+        }
+        
+        function done() {
+            // $("<div />").html("Done!").addClass("statusline").css("background-color", "#FFFF99").appendTo(".status");
+            // $("#startstop").html("start");
+        }
+        
+       var paper = Raphael("metronome_container", 160, 160);
+        
+        var m = metronome({
+            len: 150,
+            angle: 20,
+            tick: tick,
+            complete: done,
+            paper: paper,
+            // audio: "https://github.com/wilson428/metronome/blob/master/tick.wav?raw=true"
+        });
+        
+        m.make_input("#inputs");
+        m.shapes().outline.attr("fill", "#8c008c");
+        m.shapes().arm.attr("stroke", "#EEE");
+     </script>
+<script>
+</script>
+    
+</body>
+</html>

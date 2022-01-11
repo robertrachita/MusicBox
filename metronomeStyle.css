@@ -1,0 +1,261 @@
+
+  /* Button used to open the chat form - fixed at the bottom of the page */
+#metronomeToggle{
+    position: fixed;
+    right: 3%;
+    bottom: 5%;
+    background: purple;
+    color: white;
+    width:60px;
+    height: 60px;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.4);
+    z-index:999;
+    
+}
+#metronomeAnimationToggle
+{
+    position: fixed;
+    right: 3%;
+    bottom: 15%;
+    background: rgb(128, 5, 128);
+    color: white;
+    width:60px;
+    height: 60px;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.4);
+    z-index:999;
+}
+
+#metronomeToggle:hover{
+    opacity: 1;
+}
+
+  
+  /* The popup chat - hidden by default */
+  #metronome {
+    
+    position: fixed;
+    bottom: 10%;
+    right: 8%;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  .show{
+  display: none;
+}
+  
+  /* Full-width textarea */
+  #metronome{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+  }
+  
+  /* When the textarea gets focus, do something */
+  #metronome{
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/send button */
+  #metronome {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border-radius:25px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  /* Add a red background color to the cancel button */
+  #metronome{
+    background-color: purple;
+  }
+  
+  /* Add some hover effects to buttons */
+  .metronomeToggle:hover{
+    opacity: 1;
+  }
+#metronome {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    height: 120px;
+    justify-content: space-between;
+    visibility: hidden;
+}
+.bpm-display {
+    width: 100%;
+    text-align: center;
+    color: #fa545c;
+    font-weight: bold;
+}
+.bpm-display .tempo {
+    font-size: 3em;
+}
+.tempo-text {
+    font-size: .8em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.tempo-settings {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tempo-settings .adjust-tempo-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    text-align: center;
+    cursor: pointer;
+}
+.tempo-settings .adjust-tempo-btn:hover {
+    background: #fa545c;
+    color: #fff;
+}
+.tempo-settings .decrease-tempo {
+    line-height: 25px;
+}
+.tempo-settings .increase-tempo {
+    line-height: 32px;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    background-color: transparent;
+    width: 70%;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fa545c;
+    cursor: pointer;
+    margin-top: -8px;
+}
+input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fa545c;
+    cursor: pointer;
+    border: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+}
+
+.start-stop {
+    width: 50px;
+    height: 50px;
+    font-size: 0.7em;
+    text-align: center;
+    background: #fa545c;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 50px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.start-stop:hover {
+    background: #ff656c;
+}
+.measures {
+    display: flex;
+    justify-content: center;
+}
+.measures .stepper {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    text-align: center;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.measures .stepper:hover {
+    background: #ff656c;
+    color: #fff;
+}
+.measures .add-beats {
+    line-height: 20px;
+}
+
+.beats-per-measure-text {
+    text-align: center;
+    font-size: 0.5em;
+    text-transform: uppercase;
+}
+
+/* metronome animation */
+#metronomeAnimation
+{
+    position: fixed;
+    right: 20%;
+    bottom: 5%;
+}
+svg
+{
+padding-left: 91%;
+padding-top:21%;
+opacity:0;
+}
+.sheet
+{
+    margin-left:10%;
+}
+.sheet-shett
+{
+    margin-left: 11.5%;
+    width:885px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
