@@ -1,7 +1,6 @@
 const express = require('express');
 const authController = require('../controllers/auth');
 const path = require('path');
-const res = require('express/lib/response');
 const router = express.Router();
 
 const app = express();
@@ -25,24 +24,16 @@ router.get('/login2', (req, res) => {
     res.render('login2');
 });
 
-
-// router.get('/call', (req, res) => {
-//     res.redirect(`/${uuidV4()}`)
-// })
-
-// router.get('/:call', (req, res) => {
-//     res.render('call', { roomId: req.params.room })
-// })
-
 router.get('/profile', authController.isLoggedIn, (req, res) => {
     if (req.user) {
         res.render('profile', {
             user: req.user
         });
-    } else {
+    }
+    else {
         res.redirect('/login');
     }
-
+    
 });
 
 router.get('/upload', authController.isLoggedIn, (req, res) => {
