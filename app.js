@@ -8,6 +8,10 @@ dotenv.config({ path: './.env' });
 
 const app = express();
 
+const server = require('https').Server(app);
+const io = require('socket.io')(server);
+const { v4: uuidV4 } = require('uuid');
+
 const db = mysql.createConnection({
     //In order to run on the server instead of localhost
     //use ip adress of it 
@@ -39,6 +43,25 @@ db.connect((error) => {
 //Define Rountes
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
+
+app.get('/', (req, res) => {
+    res.redirect(`/${uuidV4()}`)
+})
+
+app.get('/:call', (req, res) => {
+    res.render('call', { roomId: req.params.room })
+})
+
+io.on('connection', socket => {
+    socket.on('join-room', (roomId, userId) => {
+        socket.join(roomId)
+        socket.to(roomId).broadcast.emit('user-connected', userId)
+
+        socket.on('disconnect', () => {
+            socket.to(roomId).broadcast.emit('user-disconnected', userId)
+        })
+    })
+})
 
 let port = process.env.PORT;
 if (port == null || port == "") {
