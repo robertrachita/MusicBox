@@ -25,6 +25,8 @@ const uploadController = require('../controllers/upload');
 
 const router = express.Router();
 
+// router.post('/registration2',authController.updateProfile)
+
 router.post('/register', authController.register)
 
 router.post('/login', authController.login);

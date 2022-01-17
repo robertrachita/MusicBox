@@ -13,6 +13,8 @@ const db = mysql.createConnection({
     database: process.env.DATABASE
 });
 
+
+   
 exports.login = async(req,res) =>{
     try {
         const{email, password} = req.body;
@@ -51,15 +53,28 @@ exports.login = async(req,res) =>{
             }
 
         })
-
-
-
     } catch (error) {
         console.log(error);
     }
 }
 
+exports.updateProfile = (req,res) =>{
+    console.log(jwt.email);
+    // console.log(req.body);
+    // const {firstName, lastName, city,country,instrument} = req.body;
+    // db.query('UPDATE users SET ? WHERE email = "golem@mail.bg" ',{first_name: firstName}, (error,results) =>{
+    //     if(error) {
+    //         console.log(error);
+    //     }else {
+    //         console.log(results);
+    //         return res.render('register',{
+    //             message: 'User registered'
+    //         });
+    //     }
 
+    // });
+
+}
 
 
 exports.register = (req, res) =>{
@@ -71,7 +86,7 @@ exports.register = (req, res) =>{
     // const password = req.body.password;
     // const passwordConfirm = req.body.passwordConfirm;
 //The bottom one is the smarter way to do it 
-    const {name, email, password, passwordConfirm} = req.body;
+    const {firstname,lastname, email, password, passwordConfirm,city,country,instrument,date} = req.body;
 
     db.query('SELECT email FROM users WHERE email = ?', [email], async(error, results) =>{
         if(error){
@@ -91,7 +106,7 @@ exports.register = (req, res) =>{
         let hashedPassword = await bcrypt.hash(password, 8);
         console.log(hashedPassword);
 
-        db.query('INSERT INTO users SET ? ',{first_name: name, email: email, password: hashedPassword}, (error,results) =>{
+        db.query('INSERT INTO users SET ? ',{first_name: firstname,last_name:lastname, email: email, password: hashedPassword,city:city,country:country,instrument:instrument,date_of_birth:date}, (error,results) =>{
             if(error) {
                 console.log(error);
             }else {

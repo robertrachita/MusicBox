@@ -28,14 +28,24 @@
                     <div class="illustration"></div>
                     <div class="formWrapper">
                       <form action="/auth/register" method="POST">
-                            <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" name="name">
+                            <label for="firstname">First Name</label>
+                        <input type="text" class="form-control" id="firstname" name="firstname">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname">
                               <label for="email">Email Adress</label>
                         <input type="email" class="form-control" id="email" name="email">
                              <label for="password">Password</label>
                         <input type="password" class="form-control" id="password" name="password">
                          <label for="passwordConfirm">Confirm Password</label>
                         <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm">
+                        <label for="city">City of Residence</label>
+                        <input type="text" class="form-control registrationInput" id="city" name="city">
+                        <label for="country">Country of Residence</label>
+                        <input type="text" class="form-control registrationInput" id="country" name="country">
+                        <label for="city">Preferred Instrument</label>
+                        <input type="text" class="form-control registrationInput" id="instrument" name="instrument">
+                        <label for="birthDate">Date of Birth</label>
+                        <input type="date"  class=" form-control registrationInput" id="date" name="date" value="2000-01-01" min="1920-01-01" max="2012-01-01">
                            <button type="submit" class="btn btn-primary">Register User</button>
                         </form>
                         <div>

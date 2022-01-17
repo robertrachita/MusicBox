@@ -1,6 +1,7 @@
 const express = require('express');
 const authController = require('../controllers/auth');
 const path = require('path');
+const req = require('express/lib/request');
 const router = express.Router();
 
 const app = express();
@@ -18,10 +19,6 @@ router.get('/register', (req, res) => {
 
 router.get('/login', (req, res) => {
     res.render('login');
-});
-
-router.get('/login2', (req, res) => {
-    res.render('login2');
 });
 
 router.get('/registration2', (req, res) => {

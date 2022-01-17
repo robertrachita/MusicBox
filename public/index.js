@@ -2,7 +2,7 @@ let wrapper = document.getElementById("contentIndex");
 
 const imgPath = "img/indexIcons/";
 const imgNames = ["chats.svg", "chats.svg", "chats.svg", "chats.svg", "chats.svg", "chats.svg", "chats.svg"];
-const titles = ["Profile", "Music Sheets", "Calendar", "Messages", "Groups", "Upload","Settings"];
+const titles = ["Profile", "Music Sheets", "Update Profile", "Messages", "Groups", "Upload","Settings"];
 const targetLocations = ["/profile", "", "", "", "",""];
 
 const tilesPerRow = 4;
