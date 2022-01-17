@@ -4,9 +4,21 @@ const mysql = require("mysql");
 const dotenv = require("dotenv");
 const cookieParser = require('cookie-parser');
 
+const app = express();
+
+const server = require('https').Server(app)
+const io = require('socket.io')(server)
+const { ExpressPeerServer } = require('peer');
+const peerServer = ExpressPeerServer(server, {
+    debug: true
+});
+const { v4: uuidV4 } = require('uuid')
+
 dotenv.config({ path: './.env' });
 
-const app = express();
+
+
+app.use('/peerjs', peerServer);
 
 const db = mysql.createConnection({
     //In order to run on the server instead of localhost
@@ -39,6 +51,30 @@ db.connect((error) => {
 //Define Rountes
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
+
+app.get('/', (req, res) => {
+    res.redirect(`/${uuidV4()}`)
+})
+
+app.get('/:room', (req, res) => {
+    res.render('room', { roomId: req.params.room })
+})
+
+io.on('connection', socket => {
+    socket.on('join-room', (roomId, userId) => {
+        socket.join(roomId)
+        socket.to(roomId).broadcast.emit('user-connected', userId);
+        // messages
+        socket.on('message', (message) => {
+            //send message to the same room
+            io.to(roomId).emit('createMessage', message)
+        });
+
+        socket.on('disconnect', () => {
+            socket.to(roomId).broadcast.emit('user-disconnected', userId)
+        })
+    })
+})
 
 let port = process.env.PORT;
 if (port == null || port == "") {
