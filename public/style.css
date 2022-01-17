@@ -411,6 +411,13 @@ button:hover {
     color: #34203D;
 }
 
+@media only screen and (max-width:850px){
+    #registration2Box{
+        width: 85%;
+        margin-top: 30px;
+    }
+}
+
 @media only screen and (max-width:710px){
     /* remove illustration and rearrange items*/
 
@@ -434,5 +441,9 @@ button:hover {
         border-bottom: 2px solid #472854;
         width: 100%;
         height: 20%;
+    }
+
+    #registration2Box{
+        width: 90%;
     }
 }
