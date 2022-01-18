@@ -5,13 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/metronomeStyle.css">
-    <script src="../public/metronomeBackEnd.js" type="module"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <title>Metronome</title>
     
 </head>
-<body onload="hideMetronome()">
+<body>
     <button id="metronomeToggle" onclick="metronomeToggler()">metronome</button>
 
         <div id="metronome">
@@ -35,9 +34,7 @@
         
         </div>
         
-    <!-- <canvas id="metronomeAnimation">
 
-    </canvas> -->
     <button id="metronomeAnimationToggle" onclick="metronomeAnimationToggler()">metronome Animation</button>
     <div id="metronomeAnimation">
         <table class="example">
@@ -82,8 +79,8 @@
             text-align: right;
         }
                 </style>
-            </head>
-            <body>
+
+
               
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
@@ -100,9 +97,9 @@
             // $("<div />").html("Done!").addClass("statusline").css("background-color", "#FFFF99").appendTo(".status");
             // $("#startstop").html("start");
         }
-        
+
        var paper = Raphael("metronome_container", 160, 160);
-        
+
         var m = metronome({
             len: 150,
             angle: 20,
@@ -111,13 +108,11 @@
             paper: paper,
             // audio: "https://github.com/wilson428/metronome/blob/master/tick.wav?raw=true"
         });
-        
+
         m.make_input("#inputs");
         m.shapes().outline.attr("fill", "#8c008c");
         m.shapes().arm.attr("stroke", "#EEE");
+        paper.canvas.className.baseVal="goshPlease";
      </script>
-<script>
-</script>
-    
 </body>
 </html>

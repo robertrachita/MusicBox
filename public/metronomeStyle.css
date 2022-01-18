@@ -228,20 +228,12 @@ input[type=range]::-moz-range-track {
     right: 20%;
     bottom: 5%;
 }
-svg
+
+.goshPlease
 {
-padding-left: 91%;
-padding-top:21%;
-opacity:0;
-}
-.sheet
-{
-    margin-left:10%;
-}
-.sheet-shett
-{
-    margin-left: 11.5%;
-    width:885px;
+    padding-left: 91%;
+    padding-top:21%;
+    opacity:0;
 }
 
 
