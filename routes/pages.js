@@ -60,6 +60,14 @@ router.get('/view_uploads', authController.isLoggedIn, (req, res) => {
     }
 });
 
+router.get('/view_rooms', authController.isLoggedIn, (req, res) => {
+    if (req.user) {
+        res.render('view_rooms');
+    } else {
+        res.redirect('/login');
+    }
+});
+
 router.get('/index', authController.isLoggedIn, (req, res) => {
     if (req.user) {
         res.render('index');

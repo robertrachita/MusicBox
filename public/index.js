@@ -2,10 +2,8 @@ let wrapper = document.getElementById("contentIndex");
 
 const imgPath = "img/indexIcons/";
 const imgNames = ["chats.svg", "chats.svg", "chats.svg", "chats.svg", "chats.svg", "chats.svg", "chats.svg"];
-// const titles = ["Profile", "Music Sheets", "Update Profile", "Messages", "Groups", "Upload","Settings"];
-// const targetLocations = ["/profile", "", "", "", "",""];
-const titles = ["Profile", "Music Sheets", "Call", "Upload Sheets", "View Uploaded Sheets", "Settings"];
-const targetLocations = ["/profile", "/musicsheets", "https://musicdate-room.herokuapp.com/", "/upload", "/view_uploads", "/settings"];
+const titles = ["Profile", "Music Sheets", "Quick Call", "Calls", "Upload Sheets", "View Uploaded Sheets", "Settings"];
+const targetLocations = ["/profile", "/musicsheets", "https://musicdate-room.herokuapp.com/", "/view_rooms", "/upload", "/view_uploads", "/settings"];
 const tilesPerRow = 4;
 const rows = Math.ceil(imgNames.length / tilesPerRow);
 console.log(rows);
