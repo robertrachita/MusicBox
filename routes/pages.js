@@ -21,9 +21,6 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/registration2', (req, res) => {
-    res.render('registration2');
-});
 
 router.get('/profile', authController.isLoggedIn, (req, res) => {
     if (req.user) {
@@ -39,6 +36,22 @@ router.get('/profile', authController.isLoggedIn, (req, res) => {
 router.get('/upload', authController.isLoggedIn, (req, res) => {
     if (req.user) {
         res.render('upload');
+    } else {
+        res.redirect('/login');
+    }
+});
+
+router.get('/musicsheets', authController.isLoggedIn, (req, res) => {
+    if (req.user) {
+        res.render('musicsheets');
+    } else {
+        res.redirect('/login');
+    }
+});
+
+router.get('/metronomeFrontEnd', authController.isLoggedIn, (req, res) => {
+    if (req.user) {
+        res.render('metronomeFrontEnd');
     } else {
         res.redirect('/login');
     }
