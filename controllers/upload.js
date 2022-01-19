@@ -12,9 +12,6 @@ const db = mysql.createConnection({
 });
 
 exports.upload = async (req, res,) => {
-    let file;
-    let uploadPath;
-
     if (req.cookies.jwt) {
         try {
             console.log(req.file);

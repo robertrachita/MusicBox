@@ -32,3 +32,12 @@ CREATE TABLE IF NOT EXISTS `music_sheets`
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 1001
   DEFAULT CHARSET = utf8mb4;
+
+  CREATE TABLE IF NOT EXISTS `rooms`
+(
+    `room_id`       INT                 NOT NULL AUTO_INCREMENT,
+  
+    CONSTRAINT PK_user_id PRIMARY KEY (room_id)
+) ENGINE = InnoDB
+  AUTO_INCREMENT = 1001
+  DEFAULT CHARSET = utf8mb4;

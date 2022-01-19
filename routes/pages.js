@@ -1,6 +1,7 @@
 const express = require('express');
 const authController = require('../controllers/auth');
 const path = require('path');
+const req = require('express/lib/request');
 const router = express.Router();
 
 const app = express();
@@ -20,25 +21,61 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/login2', (req, res) => {
-    res.render('login2');
-});
 
 router.get('/profile', authController.isLoggedIn, (req, res) => {
     if (req.user) {
         res.render('profile', {
             user: req.user
         });
-    }
-    else {
+    } else {
         res.redirect('/login');
     }
-    
+
 });
 
 router.get('/upload', authController.isLoggedIn, (req, res) => {
     if (req.user) {
         res.render('upload');
+    } else {
+        res.redirect('/login');
+    }
+});
+
+router.get('/musicsheets', authController.isLoggedIn, (req, res) => {
+    if (req.user) {
+        res.render('musicsheets');
+    } else {
+        res.redirect('/login');
+    }
+});
+
+router.get('/metronomeFrontEnd', authController.isLoggedIn, (req, res) => {
+    if (req.user) {
+        res.render('metronomeFrontEnd');
+    } else {
+        res.redirect('/login');
+    }
+});
+
+router.get('/settings', authController.isLoggedIn, (req, res) => {
+    if (req.user) {
+        res.render('settings');
+    } else {
+        res.redirect('/login');
+    }
+});
+
+router.get('/view_uploads', authController.isLoggedIn, (req, res) => {
+    if (req.user) {
+        res.render('view_uploads');
+    } else {
+        res.redirect('/login');
+    }
+});
+
+router.get('/view_rooms', authController.isLoggedIn, (req, res) => {
+    if (req.user) {
+        res.render('view_rooms');
     } else {
         res.redirect('/login');
     }
@@ -52,7 +89,6 @@ router.get('/index', authController.isLoggedIn, (req, res) => {
     }
 });
 
-
-router.get('/upload', express.static(path.join(__dirname, 'public/upload')));
+//router.get('/upload', express.static(path.join(__dirname, 'public/upload')));
 
 module.exports = router;

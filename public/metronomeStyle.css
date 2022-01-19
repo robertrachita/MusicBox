@@ -1,0 +1,465 @@
+
+  /* Button used to open the chat form - fixed at the bottom of the page */
+#metronomeToggle{
+    position: fixed;
+    right: 3%;
+    bottom: 5%;
+    background: purple;
+    color: white;
+    width:60px;
+    height: 60px;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.4);
+    z-index:999;
+
+    
+}
+#metronomeAnimationToggle
+{
+    position: fixed;
+    right: 3%;
+    bottom: 15%;
+    background: rgb(128, 5, 128);
+    color: white;
+    width:60px;
+    height: 60px;
+    border-radius: 50%;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.4);
+    z-index:999;
+    margin-bottom: 22vw;
+}
+
+#metronomeToggle:hover{
+    opacity: 1;
+}
+
+  
+  /* The popup chat - hidden by default */
+  #metronome {
+    
+    position: fixed;
+    bottom: 10%;
+    right: 23%;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  .show{
+  display: none;
+}
+  
+  /* Full-width textarea */
+  #metronome{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+  }
+  
+  /* When the textarea gets focus, do something */
+  #metronome{
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/send button */
+  #metronome {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border-radius:25px;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.8;
+  }
+  
+  /* Add a red background color to the cancel button */
+  #metronome{
+    background-color: purple;
+  }
+  
+  /* Add some hover effects to buttons */
+  .metronomeToggle:hover{
+    opacity: 1;
+  }
+#metronome {
+    display: flex;
+    flex-direction: column;
+    width: 30vh;
+    height: 20vh;
+    justify-content: space-between;
+    visibility: hidden;
+}
+.bpm-display {
+    width: 100%;
+    text-align: center;
+    color: #fa545c;
+    font-weight: bold;
+}
+.bpm-display .tempo {
+    font-size: 3em;
+}
+.tempo-text {
+    font-size: .8em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.tempo-settings {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tempo-settings .adjust-tempo-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 4vw;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    text-align: center;
+    cursor: pointer;
+}
+.tempo-settings .adjust-tempo-btn:hover {
+    background: #fa545c;
+    color: #fff;
+}
+.tempo-settings .decrease-tempo {
+    line-height: 2vh;
+}
+.tempo-settings .increase-tempo {
+    line-height: 3vh;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    background-color: transparent;
+    width: 70%;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1.24vw;
+    height: 1.67vh;
+    border-radius: 50%;
+    background: #fa545c;
+    cursor: pointer;
+    margin-top: -0.8vh;
+}
+input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fa545c;
+    cursor: pointer;
+    border: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+}
+
+.start-stop {
+    width: 50px;
+    height: 50px;
+    font-size: 0.7em;
+    text-align: center;
+    background: #fa545c;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 50px;
+    margin: 0 auto;
+    cursor: pointer;
+
+}
+
+.start-stop:hover {
+    background: #ff656c;
+}
+.measures {
+    display: flex;
+    justify-content: center;
+}
+.measures .stepper {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    text-align: center;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.measures .stepper:hover {
+    background: #ff656c;
+    color: #fff;
+}
+.measures .add-beats {
+    line-height: 20px;
+}
+
+.beats-per-measure-text {
+    text-align: center;
+    font-size: 0.5em;
+    text-transform: uppercase;
+}
+
+/* metronome animation */
+#metronomeAnimation
+{
+    position: fixed;
+    right: 20vw;
+    bottom: 5vh;
+}
+
+.goshPlease
+{
+    padding-left: 40vw;
+    padding-top:40vh;
+    opacity:0;
+}
+
+@media (max-device-width: 1000px) {
+
+    /* Full-width textarea */
+    #metronome{
+        min-height: 110px;
+        width: 40vw;
+        right:35%;
+        bottom:8%;
+    }
+
+
+    .bpm-display .tempo {
+        font-size: 1em;
+    }
+
+    .start-stop {
+        line-height: 6vh;
+        min-height: 25px;
+        min-width: 15px;
+    }
+
+    .measures .stepper {
+        min-height: 10px;
+        min-height: 10px;
+    }
+
+    .beats-per-measure-text {
+        font-size: 0.4em;
+    }
+    .tempo-text {
+        font-size: 0.8em;
+    }
+    .tempo-settings .adjust-tempo-btn {
+        width: 17px;
+        height: 17px;
+        font-size: 20px;
+        border-radius: 50%;
+        border: 1px solid #ddd;
+        text-align: center;
+        cursor: pointer;
+        line-height: 15px;
+
+    }
+    input[type=range]::-moz-range-thumb {
+        -webkit-appearance: none;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #fa545c;
+        cursor: pointer;
+        border: none;
+    }
+    .metronomeIframe
+    {
+        width: 30vw;
+        height:90vh;
+        margin-left:77vw;
+        margin-top: -95vh;
+        z-index: 999;
+        position: absolute;
+
+    }
+    .goshPlease
+    {
+        padding-left:25vw;
+        padding-top:10vh;
+        opacity:0;
+    }
+
+}
+  @media (max-device-width: 1300px) {
+  @media(min-device-width: 1010px)
+  {
+      /* Full-width textarea */
+      #metronome{
+          min-height: 100px;
+          width: 40vw;
+          right:35%;
+          bottom:10%;
+      }
+
+
+      .bpm-display .tempo {
+          font-size: 1em;
+      }
+
+      .start-stop {
+          line-height: 6vh;
+          min-height: 25px;
+          min-width: 15px;
+      }
+
+      .measures .stepper {
+          min-height: 10px;
+          min-height: 10px;
+      }
+
+      .beats-per-measure-text {
+          font-size: 0.4em;
+      }
+      .tempo-text {
+          font-size: 0.8em;
+      }
+      .tempo-settings .adjust-tempo-btn {
+          width: 17px;
+          height: 17px;
+          font-size: 20px;
+          border-radius: 50%;
+          border: 1px solid #ddd;
+          text-align: center;
+          cursor: pointer;
+          line-height: 15px;
+
+      }
+      input[type=range]::-moz-range-thumb {
+          -webkit-appearance: none;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #fa545c;
+          cursor: pointer;
+          border: none;
+      }
+      .metronomeIframe
+      {
+          width: 30vw;
+          height:90vh;
+          margin-left:77vw;
+          margin-top: -95vh;
+          z-index: 999;
+          position: absolute;
+
+      }
+      .goshPlease
+      {
+          padding-left:25vw;
+          padding-top:40vh;
+          opacity:0;
+      }
+
+  } }
+  @media (device-height: 1079px) {
+
+
+          /* Full-width textarea */
+          #metronome{
+              min-height: 80px;
+              min-width: 100px;
+              width: 40vw;
+              height:14vh;
+              right:34%;
+              bottom:9%;
+          }
+
+
+          .bpm-display .tempo {
+              font-size: 1em;
+          }
+
+          .start-stop {
+              line-height: 4.5vh;
+              min-height: 25px;
+              min-width: 15px;
+          }
+
+          .measures .stepper {
+              min-height: 10px;
+              min-height: 10px;
+          }
+
+          .beats-per-measure-text {
+              font-size: 0.4em;
+          }
+          .tempo-text {
+              font-size: 0.8em;
+          }
+          .tempo-settings .adjust-tempo-btn {
+              width: 17px;
+              height: 17px;
+              font-size: 20px;
+              border-radius: 50%;
+              border: 1px solid #ddd;
+              text-align: center;
+              cursor: pointer;
+              line-height: 15px;
+
+          }
+          input[type=range]::-moz-range-thumb {
+              -webkit-appearance: none;
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background: #fa545c;
+              cursor: pointer;
+              border: none;
+          }
+          .metronomeIframe
+          {
+
+          }
+          .goshPlease
+          {
+              padding-left:35vw;
+              padding-top:58vh;
+              opacity:0;
+          }
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

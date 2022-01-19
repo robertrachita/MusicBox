@@ -1,18 +1,24 @@
 const express = require('express');
 const multer = require('multer');
+
+const fs = require('fs');
+
 const multerStorage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, "public");
+        const path = 'public/upload'
+        fs.mkdirSync(path, { recursive: true });
+        cb(null, path);
     },
     filename: (req, file, cb) => {
         const ext = file.mimetype.split("/")[1];
-        cb(null, `upload/admin-${file.fieldname}-${Date.now()}.${ext}`);
+        cb(null, `admin-${file.fieldname}-${Date.now()}.${ext}`);
     },
 });
 const upload = multer({
     storage: multerStorage,
     fileFilter: (req, file, cb) => {
-        if (file.mimetype == "application/xml" || file.mimetype == "text/xml") {
+        console.log(file.mimetype);
+        if (file.mimetype == "application/xml" || file.mimetype == "text/xml" || file.mimetype == "application/octet-stream") {
             cb(null, true);
         } else {
             cb(null, false);
@@ -24,6 +30,8 @@ const authController = require('../controllers/auth');
 const uploadController = require('../controllers/upload');
 
 const router = express.Router();
+
+// router.post('/registration2',authController.updateProfile)
 
 router.post('/register', authController.register)
 
