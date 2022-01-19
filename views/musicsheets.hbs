@@ -316,7 +316,6 @@
 </head>
 
 <body>
-  <div class="musicSheet" muted=true;>
     <div class="at-wrap">
       <div class="at-overlay">
         <div class="at-overlay-content">
@@ -352,8 +351,6 @@
           <a class="btn toggle at-count-in">
             <i class="fas fa-hourglass-half"></i>
           </a>
-          <button id="mute_all" onclick="mutePage()">Mute all</button>
-          <button id="unmute_all">UnMute all</button>
           <a class="btn at-metronome">
             <i class="fas fa-edit"></i>
           </a>
@@ -408,7 +405,7 @@
       file: "https://www.alphatab.net/files/canon.gp",
       player: {
         enablePlayer: true,
-        soundFont: "https://cdn.jsdelivr.net/npm/@coderline/alphatab@latest/dist/soundfont/sonivox.sf2",
+        //soundFont: "https://cdn.jsdelivr.net/npm/@coderline/alphatab@latest/dist/soundfont/sonivox.sf2",
         scrollElement: wrapper.querySelector('.at-viewport')
       },
     };
