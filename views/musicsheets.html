@@ -15,8 +15,8 @@
       }
 
       .at-wrap {
-        width: 60vw;
-        height: 60vh;
+        width: 80vw;
+        height: 96vh;
         margin: 0 auto;
         border: 1px solid rgba(0, 0, 0, 0.12);
         display: flex;
@@ -242,10 +242,35 @@
         fill: #0078ff;
         stroke: #0078ff;
       }
+      .metronomeIframe
+      {
+        width:300px;
+        height:700px;
+        margin-left:80%;
+        margin-top: -663px;
+        position:absolute;
+        z-index: 999;
+
+      }
+      iframe
+      {
+        height:100%;
+        width:100%;
+        border: 0;
+        scroll:no;
+      }
+      .musicSheet
+      {
+        position:relative;
+        width:1154px;
+        width:334px;
+        margin-left:7%;
+      }
     </style>
   </head>
 
   <body>
+  <div class="musicSheet">
     <div class="at-wrap">
       <div class="at-overlay">
         <div class="at-overlay-content">
@@ -324,7 +349,7 @@
         </div>
       </div>
     </template>
-
+  </div>
     <script type="text/javascript">
       // load elements
       const wrapper = document.querySelector(".at-wrap");
@@ -516,7 +541,9 @@
           formatDuration(e.currentTime) + " / " + formatDuration(e.endTime);
       });
     </script>
-
+    <div class="metronomeIframe">
+  <iframe src="metronomeFrontEnd.html" scrolling="no"></iframe>
+    </div>
 
   </body>
 </html>
