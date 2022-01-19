@@ -1,0 +1,192 @@
+body{
+    background-image:  url("img/background.svg")!important;
+}
+
+.backgroundBox{
+    background-color: white;
+    padding: 10px;
+    height: 100%;
+    width: 65%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.73); 
+    box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.73);
+}
+
+.profileHeader{
+    height: 30%;
+    width: 100%; 
+    display: flex;
+    align-items: flex-end;
+    padding: 15px;
+}
+
+#profilePic{
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    background-image: url("img/profilepic.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 20px;
+}
+
+.profileHeaderText{
+    width: 40%;
+    height: 100%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.profileIcons{
+    width: 20%;
+    height: 100%;
+}
+
+.pHT1{
+    margin-left: 27px;
+    font-size: 11pt;
+    margin-bottom: 5px !important;
+}
+
+.pHT2{
+    color: #693580;
+    font-size: 10pt;
+}
+
+.locationIcon{
+    height: auto;
+    width: 17px;
+    margin: 0 10px 7px 0;
+}
+
+.profileContent{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.profileContentBoxes{
+    width: 30%;
+    height: 100%;
+    margin-right: 2%;
+    display: flex; 
+    flex-direction: column;
+    padding: 10px;
+}
+
+.profileMusicSheets{
+    background-color: #472854;
+    border-radius: 40px;
+    width: 25%;
+}
+
+.profileGroupsWrapper{
+    overflow-y: scroll;
+}
+
+.profileGroupsText{
+    font-size: 11pt;
+}
+
+.profileGroup{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.profileGroupImage{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profileGroupTitle{
+    color: #693580;
+    font-size: 10pt;
+    height: auto;
+    margin-bottom: 0;
+}
+
+.profileGroup:hover{
+    cursor: pointer;
+}
+
+.group1{
+    background-image: url("img/placeholderimages/group1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.group2{
+    background-image: url("img/profilepic.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.profileAboutWrapper{
+    color: #693580;
+    font-size: 10pt;
+}
+
+.profileAboutItem{
+    display:flex;
+    flex-direction: row;
+}
+
+.profileAboutIcon{
+    height: 15px;
+    width: 15px;
+    margin-right: 10px;
+}
+
+/* .aboutItemTitle{
+    color: #693580;
+    font-size: 10pt;
+} */
+
+@media only screen and (max-width:1200px){
+    .backgroundBox{
+        width: 90%;
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width:850px){
+    .backgroundBox{
+        width: 90%;
+        overflow-y: scroll;
+        padding: 10px;
+    }
+
+    .profileContent{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profileAbout{
+        order: -1;
+    }
+
+    .profileContentBoxes{
+        width: 100%;
+        border-radius: 20px;
+    }
+
+}
+
+@media only screen and (max-width:500px){
+    #profilePic{
+        height: 120px;
+        width: 120px;
+    }
+}

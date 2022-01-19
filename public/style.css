@@ -18,7 +18,11 @@ body {
     margin-left: 0px;
 }
 
-#wrapper {
+a{
+    text-decoration: none;
+}
+
+.wrapper {
     height: 100%;
     width: 100%;
     display: flex;
@@ -28,7 +32,7 @@ body {
 
 /* HEADER */
 
-#logo {
+.logo {
     height: 100%;
     width: auto;
     margin: 2px;
@@ -42,10 +46,10 @@ header {
     height: 10%;
     width: 100%;
     display: flex;
-    padding: 10px;
+    padding: 12px;
 }
 
-#svg {
+.svg {
     height: 100%;
     width: 100%;
 }
@@ -53,8 +57,8 @@ header {
 
 /* LOGIN and SIGNUP content */
 
-#content {
-    height: 70%;
+.content {
+    height: 80%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -88,13 +92,14 @@ header {
     justify-content: center;
     padding: 20px;
     font-weight: bold;
+    text-decoration: none;
 }
 
-#loginTab {
+.loginTab {
     border-radius: 10px 0 0 0;
 }
 
-#signupTab {
+.signupTab {
     border-radius: 0 10px 0 0;
 }
 
@@ -165,6 +170,7 @@ form {
     height: 90%;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
 }
 
 label {
@@ -188,6 +194,11 @@ button {
     width: 90%;
     border-radius: 40px;
     padding: 5px;
+}
+
+input[type="date"]{
+padding: 13px 0 13px 0;
+
 }
 
 input[type="email"],
@@ -327,5 +338,118 @@ button:hover {
     }
     button {
         margin-left: 5%;
+    }
+}
+
+/* Registration 2  */
+
+.backgroundBox{
+    background-color: white;
+    padding: 10px;
+    height: 100%;
+    width: 65%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.73); 
+    box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.73);
+}
+
+.registrationBox{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-right: 3px solid #472854;
+}
+
+.registrationText{
+    width: 40%;
+    height: 100%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#registration2Box{
+    opacity: 90%;
+}
+
+#registrationIllustration{
+    height: 35%;
+    width: 100%;
+    background-position: center;
+}
+
+.registration2Line1{
+    font-size: 16pt;
+    font-weight: 600;
+    margin: 0;
+}
+
+.registration2Line2{
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.registrationBox{
+    padding-left: 20px;
+}
+
+.registrationInput{
+    background-color: white;
+    border-color: #472854;
+    color: #34203D;
+}
+
+.registrationButton{
+    background-color: #472854;
+    border-color: white;
+    color: white; 
+    padding: 10px;
+}
+
+.registrationButton:hover{
+    background-color: white;
+    border-color: #472854;
+    color: #34203D;
+}
+
+@media only screen and (max-width:850px){
+    #registration2Box{
+        width: 85%;
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width:710px){
+    /* remove illustration and rearrange items*/
+
+    #registrationIllustration{
+        display: none ;
+    }
+
+    .backgroundBox{
+        flex-direction: column-reverse ;
+        padding: 0;
+    }
+
+    .registrationBox{
+        width: 100%;
+        border-right: none;
+        height: 80%;
+        padding: 0;
+    }
+
+    .registrationText{
+        border-bottom: 2px solid #472854;
+        width: 100%;
+        height: 20%;
+    }
+
+    #registration2Box{
+        width: 90%;
     }
 }
