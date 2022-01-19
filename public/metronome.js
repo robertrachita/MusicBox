@@ -1,6 +1,6 @@
 var metronome = function(opts) {
-    const click1 = new Audio('../public/sound/click1.mp3');
-    const click2 = new Audio('../public/sound/click2.mp3');
+    const click1 = new Audio('/sound/click1.mp3');
+    const click2 = new Audio('/sound/click2.mp3');
     const metronomeDiv = document.getElementById("metronome");
 const popUpMetronomeBtn = document.getElementById("metronomeToggle");
 const tempoDisplay = document.querySelector('.tempo');
