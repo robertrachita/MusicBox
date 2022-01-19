@@ -242,29 +242,75 @@
         fill: #0078ff;
         stroke: #0078ff;
       }
+
+
       .metronomeIframe
       {
-        width:300px;
-        height:700px;
-        margin-left:80%;
-        margin-top: -663px;
-        position:absolute;
+        width:20vw;
+        height:90vh;
+        margin-left:77vw;
+        margin-top: -98vh;
         z-index: 999;
+        position: absolute;
 
       }
       iframe
       {
         height:100%;
         width:100%;
+        z-index: 999;
         border: 0;
         scroll:no;
       }
       .musicSheet
       {
         position:relative;
-        width:1154px;
-        width:334px;
-        margin-left:7%;
+        height:100vh;
+        width:50vw;
+        margin-left:7vw;
+        z-index: 1;
+      }
+      @media (device-height:  1079px) {
+        @media (device-height:  1079px) {
+          .metronomeIframe
+          {
+            width:30vw;
+            height:90vh;
+            margin-left:70vw;
+            margin-top: -98vh;
+            z-index: 999;
+            position: absolute;
+
+          }
+          iframe
+          {
+            height:100%;
+            width:100%;
+            z-index: 999;
+            border: 0;
+            scroll:no;
+          }
+        }
+      }
+      @media (max-device-width: 1000px) {
+        .metronomeIframe
+        {
+          width: 22vw;
+          height:85vh;
+          margin-left:77vw;
+          margin-top: -95vh;
+          z-index: 999;
+          position: absolute;
+
+        }
+        iframe
+        {
+          height:100%;
+          width:100%;
+          z-index: 999;
+          border: 0;
+          scroll:no;
+        }
       }
     </style>
   </head>
