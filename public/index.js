@@ -19,7 +19,7 @@ for (let i = 0; i < rows; i++) {
 for (let i = 0; i < titles.length; i++) {
     let row = document.getElementsByClassName('tileRow')[Math.floor(i / tilesPerRow)];
     let element;
-    if (titles[i] != "Call") {
+    if (titles[i] != "Quick Call") {
         element =
             `<a href="{{targetLocation}}" class="tileLinks">
             <div class="tile">
