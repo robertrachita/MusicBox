@@ -20,7 +20,7 @@ exports.createRoom = async (req, res) => {
             return res.status(400).render('view_uploads');
         }
 
-        db.query('INSERT INTO rooms SET ? ', {room_id: roomID}, (error, results) => {
+        db.query('INSERT INTO rooms SET room_id = ?', [roomID], (error, results) => {
             if (error) {
                 console.log(error);
             } else {

@@ -39,6 +39,7 @@ db.connect((error) => {
 //Define Rountes
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
+app.use('/room', require('./routes/room'));
 
 let port = process.env.PORT;
 if (port == null || port == "") {
