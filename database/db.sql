@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `music_sheets`
 
   CREATE TABLE IF NOT EXISTS `rooms`
 (
-    `room_id`       INT                 NOT NULL AUTO_INCREMENT,
+    `room_id`       VARCHAR(255) NOT NULL,
   
     CONSTRAINT PK_user_id PRIMARY KEY (room_id)
 ) ENGINE = InnoDB
