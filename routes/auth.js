@@ -18,7 +18,7 @@ const upload = multer({
     storage: multerStorage,
     fileFilter: (req, file, cb) => {
         console.log(file.mimetype);
-        if (file.mimetype == "application/xml" || file.mimetype == "text/xml" || file.mimetype == "application/octet-stream") {
+        if (file.mimetype === "application/xml" || file.mimetype === "text/xml" || file.mimetype === "application/octet-stream") {
             cb(null, true);
         } else {
             cb(null, false);

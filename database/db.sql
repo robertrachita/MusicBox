@@ -28,15 +28,15 @@ CREATE TABLE IF NOT EXISTS `music_sheets`
     CONSTRAINT FK_musicpath_user FOREIGN KEY (user_id)
         REFERENCES users (user_id)
         ON UPDATE CASCADE
-        ON DELETE SET NULL 
+        ON DELETE SET NULL
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 1001
   DEFAULT CHARSET = utf8mb4;
 
-  CREATE TABLE IF NOT EXISTS `rooms`
+CREATE TABLE IF NOT EXISTS `rooms`
 (
     `room_id`       VARCHAR(255) NOT NULL,,
-  
+
     CONSTRAINT PK_user_id PRIMARY KEY (room_id)
 ) ENGINE = InnoDB
   AUTO_INCREMENT = 1001
