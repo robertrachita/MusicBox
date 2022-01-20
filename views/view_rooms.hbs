@@ -1,20 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rooms</title>
-        <link href="/style.css" rel="stylesheet">
-    </head>
-    <body>
-        <form action="/room/createroom" method="post">
-            <input type="text" name="roomID" id="roomID">
-            <input type="submit" name="submitRoomId" value="Create New Room">
-        </form>
-        {{#each rooms}}
-            <p>{{this.room_id}}</p>
-        {{/each}}
-        <button name="deleteRoom" id="deleteRoom" onclick= >Delete Room</button>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms</title>
+    <link href="/style.css" rel="stylesheet">
+    <style>
+        a {
+            margin-right: 2%;
+        }
+        a:link,
+        a:visited {
+            background-color: purple;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 15%;
+        }
+
+        a:hover,
+        a:active {
+            background-color: red;
+            border-radius: 15%;
+        }
+        .centerLinks {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 22%;
+        }
+    </style>
+</head>
+
+<body>
+    {{!-- <form action="/room/createroom" method="post">
+        <input type="text" name="roomID" id="roomID">
+        <input type="submit" name="submitRoomId" value="Create New Room">
+    </form> --}}
+    {{!-- {{#each rooms}}
+    <p>{{this.room_id}}</p>
+    {{/each}}
+    <button name="deleteRoom" id="deleteRoom" onclick=>Delete Room</button> --}}
+    <div class="centerLinks">
+    <a href="https://musicdate-room.herokuapp.com/MusicDate" target="_blank" rel="noopener noreferrer"
+        class="rooms">Room 1</a>
+    <a href="https://musicdate-room.herokuapp.com/5c81ea22-c35d-4859-9984-fd5bc49a557d" target="_blank"
+        rel="noopener noreferrer" class="rooms">Room 2</a>
+    <a href="https://musicdate-room.herokuapp.com/bc6d1577-1cec-436f-b454-d8a40565fce5" target="_blank"
+        rel="noopener noreferrer" class="rooms">Room 3</a>
+    <a href="https://musicdate-room.herokuapp.com/f8a429fd-ccb1-41a4-a796-e134d7426e35" target="_blank"
+        rel="noopener noreferrer" class="rooms">Room 4</a>
+    <a href="https://musicdate-room.herokuapp.com/07745347-d40a-4ddb-8298-88e27f0b618f" target="_blank"
+        rel="noopener noreferrer" class="rooms">Room 5</a>
+        </div>
+</body>
+
 </html>
