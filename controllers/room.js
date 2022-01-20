@@ -32,3 +32,18 @@ exports.createRoom = async (req, res) => {
         console.log(e);
     }
 }
+
+exports.getRooms = async () => {
+    try {
+        db.query('SELECT * FROM rooms', (error, results) => {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log(results);
+                return results;
+            }
+        })
+    } catch (e) {
+        console.log(e);
+    }
+}

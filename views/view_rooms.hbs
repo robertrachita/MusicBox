@@ -12,7 +12,9 @@
             <input type="text" name="roomID" id="roomID">
             <input type="submit" name="submitRoomId" value="Create New Room">
         </form>
-
+        {{#each rooms}}
+            <p>{{this.room_id}}</p>
+        {{/each}}
         <button name="deleteRoom" id="deleteRoom" onclick= >Delete Room</button>
     </body>
 </html>

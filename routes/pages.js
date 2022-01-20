@@ -2,6 +2,7 @@ const express = require('express');
 const authController = require('../controllers/auth');
 const path = require('path');
 const req = require('express/lib/request');
+const roomController = require("../controllers/room");
 const router = express.Router();
 
 const app = express();
@@ -75,7 +76,9 @@ router.get('/view_uploads', authController.isLoggedIn, (req, res) => {
 
 router.get('/view_rooms', authController.isLoggedIn, (req, res) => {
     if (req.user) {
-        res.render('view_rooms');
+        res.render('view_rooms', {
+            rooms: roomController.getRooms
+        });
     } else {
         res.redirect('/login');
     }
